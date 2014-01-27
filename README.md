@@ -20,7 +20,7 @@ seed is kept secret.
 
 Create a new permutation with `New()`, passing in four parameters.
 
-The first parameter is is the seed, which can be any random value.
+The first parameter is the seed, which can be any random value.
 The next three parameters are used by the XORShift to expand the seed.
 Valid values are listed in [George Marsaglia's paper][2], on *page 3*.
 
