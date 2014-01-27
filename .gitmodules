@@ -1,6 +1,0 @@
-[submodule "github.com/onsi/ginkgo"]
-	path = github.com/onsi/ginkgo
-	url = git@github.com:onsi/ginkgo
-[submodule "github.com/onsi/gomega"]
-	path = github.com/onsi/gomega
-	url = git@github.com:onsi/gomega
