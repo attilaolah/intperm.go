@@ -1,5 +1,6 @@
 # Permutation
 
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/attilaolah/permutation.go/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 [![Build Status](https://travis-ci.org/attilaolah/permutation.go.png?branch=master)](https://travis-ci.org/attilaolah/permutation.go)
 
 This package implements a simple, configurable permutation on the set of 64-bit
@@ -58,7 +59,3 @@ fast, simple, pseudo-random integer permutations only.
 [Public domain][3].
 
 [3]: //github.com/attilaolah/permutation.go/blob/master/LICENSE
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/attilaolah/permutation.go/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
