@@ -22,29 +22,29 @@ func New(seed, a, b, c uint64) permutation {
 }
 
 // Map a number to another random one.
-func (b permutation) Map(x uint64) uint64 {
+func (p permutation) Map(x uint64) uint64 {
 	for i := 0; i < 64; i++ {
 		u := uint64(i)
 		bit := uint64(1 << (u))
 		if (bit&x)>>u == 0 {
-			x ^= ^(b[(u<<1)+(bit&x)>>u] | (bit ^ bit&x))
+			x ^= ^(p[(u<<1)+(bit&x)>>u] | (bit ^ bit&x))
 		} else {
-			x ^= ^(b[(u<<1)+(bit&x)>>u] | (bit & x))
+			x ^= ^(p[(u<<1)+(bit&x)>>u] | (bit & x))
 		}
 	}
 	return x
 }
 
 // Unmap is the reverse of Map.
-// In other words, b.Unmap(b.Map(x)) == x.
-func (b permutation) Unmap(x uint64) uint64 {
+// In other words, p.Unmap(p.Map(x)) == x.
+func (p permutation) Unmap(x uint64) uint64 {
 	for i := 63; i >= 0; i-- {
 		u := uint64(i)
 		bit := uint64(1 << (u))
 		if (bit&x)>>u == 0 {
-			x ^= ^(b[(u<<1)+(bit&x)>>u] | (bit ^ bit&x))
+			x ^= ^(p[(u<<1)+(bit&x)>>u] | (bit ^ bit&x))
 		} else {
-			x ^= ^(b[(u<<1)+(bit&x)>>u] | (bit & x))
+			x ^= ^(p[(u<<1)+(bit&x)>>u] | (bit & x))
 		}
 	}
 	return x
