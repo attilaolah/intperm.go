@@ -43,12 +43,12 @@ this can save you from having to index those tokens in the database.
 
 ## See also
 
-There is currently also a [Python implementation][6].
-
 There are [some][7] [other][8] Go permutation libraries out there, but their
 focus is on implementing a more generic mechanism that can be used with
 arbitrary structures implementing an interface. This library focuses on very
 fast, simple, pseudo-random integer permutations only.
+
+There is currently also a [Python implementation][6] of this library.
 
 [6]: //github.com/attilaolah/permutation.py
 [7]: //github.com/alexaandru/permutations
