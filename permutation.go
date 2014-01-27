@@ -10,8 +10,8 @@ type permutation []uint64
 
 // New creates a new permutation.
 // The first argument, `seed`, can be any random number.
-// The other three should be one of the 275 available triplets from the paper (page 4)
-// For secure permutations, choose different values from http://www.jstatsoft.org/v08/i14/paper.
+// The other three should be one of the 275 available triplets from the paper (page 3).
+// For unpredictable permutations, choose different values from http://www.jstatsoft.org/v08/i14/paper.
 func New(seed, a, b, c uint64) permutation {
 	masks := make([]uint64, 64*2)
 	for i := range masks {
