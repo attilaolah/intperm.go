@@ -38,14 +38,14 @@ this can save you from having to index those tokens in the database.
 [4]: //en.wikipedia.org/wiki/NP-hard
 [5]: //en.wikipedia.org/wiki/Cardinality
 
-## License
-
-[Public domain][3].
-
-[3]: //github.com/attilaolah/permutation.go/blob/master/LICENSE
-
 ## Alternate implementation
 
 There is currently also a [Python implementation][6].
 
 [6]: //github.com/attilaolah/permutation.py
+
+## License
+
+[Public domain][3].
+
+[3]: //github.com/attilaolah/permutation.go/blob/master/LICENSE
