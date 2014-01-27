@@ -35,7 +35,7 @@ func (b permutation) Map(x uint64) uint64 {
 	return x
 }
 
-// Unmap is the revers of Map.
+// Unmap is the reverse of Map.
 // In other words, b.Unmap(b.Map(x)) == x.
 func (b permutation) Unmap(x uint64) uint64 {
 	for i := 63; i >= 0; i-- {
