@@ -38,7 +38,7 @@ this can save you from having to index those tokens in the database.
 [4]: //en.wikipedia.org/wiki/NP-hard
 [5]: //en.wikipedia.org/wiki/Cardinality
 
-## Alternate implementation
+## Alternative implementation
 
 There is currently also a [Python implementation][6].
 
