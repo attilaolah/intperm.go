@@ -1,6 +1,6 @@
 # Permutation
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/attilaolah/permutation.go/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Bitdeli](https://d2weczhvl823v0.cloudfront.net/attilaolah/permutation.go/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 [![Build Status](https://travis-ci.org/attilaolah/permutation.go.png?branch=master)](https://travis-ci.org/attilaolah/permutation.go)
 
 This package implements a simple, configurable permutation on the set of 64-bit
