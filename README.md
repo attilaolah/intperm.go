@@ -48,11 +48,12 @@ focus is on implementing a more generic mechanism that can be used with
 arbitrary structures implementing an interface. This library focuses on very
 fast, simple, pseudo-random integer permutations only.
 
-There is currently also a [Python implementation][6] of this library.
+This library is also implemented in [Ruby][9] and [Go][6].
 
-[6]: //github.com/attilaolah/permutation.py
 [7]: //github.com/alexaandru/permutations
 [8]: //github.com/nightlyone/permutation
+[6]: //github.com/attilaolah/permutation.py
+[9]: //github.com/attilaolah/permutation.py
 
 ## License
 
