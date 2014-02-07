@@ -24,24 +24,21 @@ func New(seed uint64) permutation {
 
 // MapTo a number to another random one.
 func (p permutation) MapTo(x uint64) uint64 {
-	for i := 0; i < 64; i++ {
-		u := uint64(i)
-		bit := uint64(1 << (u))
-		if (bit&x)>>u == 0 {
-			x ^= ^(p[(u<<1)+(bit&x)>>u] | (bit ^ bit&x))
-		} else {
-			x ^= ^(p[(u<<1)+(bit&x)>>u] | (bit & x))
-		}
-	}
-	return x
+	return p.doMap(x, 0, 64, 1)
 }
 
 // MapFrom is the reverse of MapTo.
 // In other words, p.MapFrom(p.MapTo(x)) == x.
 func (p permutation) MapFrom(x uint64) uint64 {
-	for i := 63; i >= 0; i-- {
+	return p.doMap(x, 63, -1, -1)
+}
+
+// Used by both MapTo and MapFrom.
+// Set `to` to true for MapTo, and `false` for MapFrom behaviour.
+func (p permutation) doMap(x uint64, from, to, step int) uint64 {
+	for i := from; i != to; i += step {
 		u := uint64(i)
-		bit := uint64(1 << (u))
+		bit := uint64(1 << u)
 		if (bit&x)>>u == 0 {
 			x ^= ^(p[(u<<1)+(bit&x)>>u] | (bit ^ bit&x))
 		} else {
