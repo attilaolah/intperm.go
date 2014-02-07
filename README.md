@@ -2,6 +2,7 @@
 
 [![Bitdeli](https://d2weczhvl823v0.cloudfront.net/attilaolah/intperm.go/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 [![Build Status](https://travis-ci.org/attilaolah/intperm.go.png?branch=master)](https://travis-ci.org/attilaolah/intperm.go)
+[![GoDoc](https://godoc.org/github.com/attilaolah/intperm.go?status.png)](https://godoc.org/github.com/attilaolah/intperm.go)
 
 This package implements a simple, configurable permutation on the set of 64-bit
 integers.
