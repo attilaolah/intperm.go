@@ -1,5 +1,5 @@
 // build !appengine
-package permutation
+package intperm
 
 import (
 	. "github.com/onsi/ginkgo"
@@ -16,28 +16,28 @@ func TestPermutation(t *testing.T) {
 }
 
 var _ = Describe("Permutation", func() {
-	var b permutation
+	var p permutation
 	Context("Using a test permutation", func() {
 		BeforeEach(func() {
-			b = New(42)
+			p = New(42)
 		})
 		Describe("MapTo", func() {
 			It("should work", func() {
-				Expect(b.MapTo(42)).To(BeNumerically("==", 4627128764160949907))
+				Expect(p.MapTo(42)).To(BeNumerically("==", 4627128764160949907))
 			})
 			It("should not map to itself", func() {
 				for i := uint64(0); i < runs; i++ {
-					Expect(b.MapTo(i)).NotTo(BeNumerically("==", i))
+					Expect(p.MapTo(i)).NotTo(BeNumerically("==", i))
 				}
 			})
 		})
 		Describe("MapFrom", func() {
 			It("should work", func() {
-				Expect(b.MapFrom(4627128764160949907)).To(BeNumerically("==", 42))
+				Expect(p.MapFrom(4627128764160949907)).To(BeNumerically("==", 42))
 			})
 			It("should be the reverse of MapTo", func() {
 				for i := uint64(0); i < runs; i++ {
-					Expect(b.MapFrom(b.MapTo(i))).To(BeNumerically("==", i))
+					Expect(p.MapFrom(p.MapTo(i))).To(BeNumerically("==", i))
 				}
 			})
 		})

@@ -1,4 +1,4 @@
-package permutation
+package intperm
 
 // Triplets from http://www.jstatsoft.org/v08/i14/paper page 3.
 var triplets = [][]uint64{

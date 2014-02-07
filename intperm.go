@@ -1,7 +1,7 @@
-// Package permutation implements a simple permutation for 64-bit ints.
+// Package intperm implements a simple permutation for 64-bit ints.
 // This file also includes a simple XORShift-based PRNG for expanding the seed.
 // Example code from http://www.jstatsoft.org/v08/i14/paper (public domain).
-package permutation
+package intperm
 
 // 64-bit full-one bitmask
 const ones = 0xffffffffffffffff
