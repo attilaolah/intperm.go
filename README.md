@@ -1,11 +1,10 @@
-# Permutation
+# Integer Permutation ![License](https://pypip.in/license/intperm/badge.png)
 
-[![Bitdeli](https://d2weczhvl823v0.cloudfront.net/attilaolah/permutation.go/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-[![Build Status](https://travis-ci.org/attilaolah/permutation.go.png?branch=master)](https://travis-ci.org/attilaolah/permutation.go)
+[![Bitdeli](https://d2weczhvl823v0.cloudfront.net/attilaolah/intperm.go/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Build Status](https://travis-ci.org/attilaolah/intperm.go.png?branch=master)](https://travis-ci.org/attilaolah/intperm.go)
 
 This package implements a simple, configurable permutation on the set of 64-bit
-integers. The implementation uses `uint64`, but it is also usable for `int64`
-types with a simple conversion.
+integers.
 
 The permutation is based on a bitmask that maps each bit of the input to a bit
 of the output. The bitmask is expanded from a random seed using a [PRNG][1], as
@@ -18,16 +17,12 @@ seed is kept secret.
 
 ## Usage
 
-Create a new permutation with `New()`, passing in four parameters.
-
-The first parameter is the seed, which can be any random value.
-The next three parameters are used by the XORShift to expand the seed.
-Valid values are listed in [George Marsaglia's paper][2], on *page 3*.
+Create a new `Permutation` instance by passing in a seed:
 
 ```go
 p := permutation.New(42, 13, 7, 17)
-a := p.Map(42) // 3333656047352411619
-b := p.Unmap(3333656047352411619) // 42
+a := p.Map(37) // 13750393542137160527
+b := p.Unmap(13750393542137160527) // 37
 ```
 
 ## Use cases
@@ -38,25 +33,21 @@ The IDs can be used together with the seed to decode the original ID, but their
 [cardinality][5] is the same as that of the IDs themselves. When used smartly,
 this can save you from having to index those tokens in the database.
 
+Another good example is randomising IDs of private objects that are available
+via some sort of an API. Let's say the user accounts on your website are
+accessible via the path `/user/:id`, where `:id` is the user's ID. Someone
+could track the growth of your user base just by enumerating the URLs and
+keeping track of the status codes (e.g. 403 vs. 404).
+
+Using this simple permutation, user IDs can be kept unpredictable, rendering
+these kinds of attacks practically useless.
+
 [4]: //en.wikipedia.org/wiki/NP-hard
 [5]: //en.wikipedia.org/wiki/Cardinality
 
 ## See also
 
-There are [some][7] [other][8] Go permutation libraries out there, but their
-focus is on implementing a more generic mechanism that can be used with
-arbitrary structures implementing an interface. This library focuses on very
-fast, simple, pseudo-random integer permutations only.
+This library is also implemented in [Python][7] and [Ruby][6].
 
-This library is also implemented in [Ruby][9] and [Go][6].
-
-[7]: //github.com/alexaandru/permutations
-[8]: //github.com/nightlyone/permutation
-[6]: //github.com/attilaolah/permutation.py
-[9]: //github.com/attilaolah/permutation.py
-
-## License
-
-[Public domain][3].
-
-[3]: //github.com/attilaolah/permutation.go/blob/master/LICENSE
+[6]: //github.com/attilaolah/intperm.rb
+[7]: //github.com/attilaolah/intperm.py
