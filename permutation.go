@@ -12,17 +12,18 @@ type permutation []uint64
 // The first argument, `seed`, can be any random number.
 // The other three should be one of the 275 available triplets from the paper (page 3).
 // For unpredictable permutations, choose different values from http://www.jstatsoft.org/v08/i14/paper.
-func New(seed, a, b, c uint64) permutation {
+func New(seed uint64) permutation {
 	masks := make([]uint64, 64*2)
+	params := triplets[seed%uint64(len(triplets))]
 	for i := range masks {
-		seed = xorshift(seed, a, b, c)
+		seed = xorshift(seed, params[0], params[1], params[2])
 		masks[i] = seed & ((1 << uint64(i>>1)) ^ uint64(ones))
 	}
 	return permutation(masks)
 }
 
-// Map a number to another random one.
-func (p permutation) Map(x uint64) uint64 {
+// MapTo a number to another random one.
+func (p permutation) MapTo(x uint64) uint64 {
 	for i := 0; i < 64; i++ {
 		u := uint64(i)
 		bit := uint64(1 << (u))
@@ -35,9 +36,9 @@ func (p permutation) Map(x uint64) uint64 {
 	return x
 }
 
-// Unmap is the reverse of Map.
-// In other words, p.Unmap(p.Map(x)) == x.
-func (p permutation) Unmap(x uint64) uint64 {
+// MapFrom is the reverse of MapTo.
+// In other words, p.MapFrom(p.MapTo(x)) == x.
+func (p permutation) MapFrom(x uint64) uint64 {
 	for i := 63; i >= 0; i-- {
 		u := uint64(i)
 		bit := uint64(1 << (u))
