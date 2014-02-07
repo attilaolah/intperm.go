@@ -9,9 +9,7 @@ const ones = 0xffffffffffffffff
 type permutation []uint64
 
 // New creates a new permutation.
-// The first argument, `seed`, can be any random number.
-// The other three should be one of the 275 available triplets from the paper (page 3).
-// For unpredictable permutations, choose different values from http://www.jstatsoft.org/v08/i14/paper.
+// The argument can be any random number.
 func New(seed uint64) permutation {
 	masks := make([]uint64, 64*2)
 	params := triplets[seed%uint64(len(triplets))]
