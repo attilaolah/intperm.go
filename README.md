@@ -1,4 +1,4 @@
-# Integer Permutation ![License](https://pypip.in/license/intperm/badge.png)
+# Integer Permutation
 
 [![Bitdeli](https://d2weczhvl823v0.cloudfront.net/attilaolah/intperm.go/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 [![Build Status](https://travis-ci.org/attilaolah/intperm.go.png?branch=master)](https://travis-ci.org/attilaolah/intperm.go)
