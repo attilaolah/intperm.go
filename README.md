@@ -21,7 +21,7 @@ seed is kept secret.
 Create a new `Permutation` instance by passing in a seed:
 
 ```go
-p := permutation.New(42, 13, 7, 17)
+p := permutation.New(42)
 a := p.MapTo(37) // 13750393542137160527
 b := p.MapFrom(13750393542137160527) // 37
 ```
