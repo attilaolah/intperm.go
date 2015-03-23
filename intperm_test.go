@@ -1,7 +1,7 @@
-// build !appengine
-package intperm
+package intperm_test
 
 import (
+	"github.com/attilaolah/intperm.go"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 
@@ -16,10 +16,10 @@ func TestPermutation(t *testing.T) {
 }
 
 var _ = Describe("Permutation", func() {
-	var p permutation
+	var p intperm.Permutation
 	Context("Using a test permutation", func() {
 		BeforeEach(func() {
-			p = New(42)
+			p = intperm.New(42)
 		})
 		Describe("MapTo", func() {
 			It("should work", func() {
